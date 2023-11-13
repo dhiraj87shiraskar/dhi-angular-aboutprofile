@@ -15,6 +15,7 @@ import { SingleCategoryComponent } from './pages/single-category/single-category
 import { SinglePostComponent } from './pages/single-post/single-post.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
+import { PostCardComponent } from './layouts/post-card/post-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SubscriptionFormComponent } from './subscription-form/subscription-form
     HomeComponent,
     SingleCategoryComponent,
     SinglePostComponent,
-    TermsAndConditionsComponent,SubscriptionFormComponent
+    TermsAndConditionsComponent,SubscriptionFormComponent, PostCardComponent
   ],
   imports: [
     BrowserModule,
