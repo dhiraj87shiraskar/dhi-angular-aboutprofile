@@ -1,3 +1,3 @@
 export interface Category {
-    categorey: string
+    category: string
 }
