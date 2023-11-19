@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { CategoriesService } from '../service/categories.service';
+import { Category } from '../models/category';
 
 @Component({
   selector: 'app-categories',
@@ -8,34 +10,16 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor(private afs: AngularFirestore){
+  constructor(private categoryService: CategoriesService){
 
   }
   ngOnInit(): void {
     
   }
   onSubmit(formData: any){
-    // let categoryData = {
-    //   category: formData.value.category,
-    //   status: 'active'
-    // }
-    // let subCategorydata = {
-    //   subCategory: 'subcatgory2'
-    // }
-    // let subSubCategorydata = {
-    //   subSubCategory: 'subSubcatgory2'
-    // }
-    // this.afs.collection('categories').add(categoryData).then((docRef) => {
-      // console.log(docRef)
-      // this.afs.collection('categories').doc(docRef.id).collection("subcategories").add(subCategorydata).then(subCat => {
-      //   console.log(subCat)
-      //   // this.afs.doc(`categories/${docRef.id}/subcategories/${subCat.id}`).collection("subsubcategories").add(subSubCategorydata).then()
-      //   this.afs.collection('categories').doc(docRef.id).collection("subcategories").doc(subCat.id).collection("subsubcategories").add(subSubCategorydata).then(subsubRefId =>{
-      //     console.log(subsubRefId)
-
-      //   })
-      // })
-    // }).catch(err => {console.log(err)})
-    
+    let categoryData: Category = {
+      categorey: formData.value.category
+    }
+    this.categoryService.saveData(categoryData)
   }
 }
